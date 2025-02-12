@@ -7,25 +7,7 @@
     <title>Prompt Engineering - EduBot</title>
     <link rel="stylesheet" href="css/article.css">
     <link rel="stylesheet" href="css/chatbot.css">
-    <script>
-        document.querySelectorAll('.copy-button').forEach(button => {
-            button.addEventListener('click', function () {
-                const content = this.closest('.prompt-box, .ai-output-box')
-                    .querySelector('.content').textContent;
-                navigator.clipboard.writeText(content)
-                    .then(() => {
-                        const originalText = this.textContent;
-                        this.textContent = '✓ Copied!';
-                        setTimeout(() => {
-                            this.textContent = originalText;
-                        }, 2000);
-                    })
-                    .catch(err => {
-                        console.error('Failed to copy:', err);
-                    });
-            });
-        });
-    </script>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <script type="importmap">
         {
           "imports": {
@@ -122,7 +104,7 @@
                     </p>
                     <div class="tip-box">
                         <p><strong>Tip:</strong> Beschouw de AI als een expert op elk gebied, maar die expert heeft wel
-                            *jouw* begeleiding nodig om te weten welk specifiek stukje expertise je nodig hebt. Jouw
+                            jouw begeleiding nodig om te weten welk specifiek stukje expertise je nodig hebt. Jouw
                             prompt is die begeleiding.</p>
                     </div>
                     <div class="note-box">
@@ -146,7 +128,7 @@
                     <ol>
                         <li><strong>Wees specifiek:</strong> Vermijd vage of algemene termen. Hoe specifieker je bent
                             over het onderwerp, de doelgroep, het gewenste detailniveau en de output, hoe beter.</li>
-                        <li><strong>Geef context:</strong> Vertel de AI *waarom* je deze informatie nodig hebt. Wat is
+                        <li><strong>Geef context:</strong> Vertel de AI waarom je deze informatie nodig hebt. Wat is
                             het doel van de vraag? Voor wie is het bedoeld? Dit helpt de AI om de relevantie van de
                             informatie beter te beoordelen.</li>
                         <li><strong>Stel duidelijke instructies:</strong> Gebruik actieve werkwoorden en geef aan wat je
@@ -201,19 +183,19 @@
                                 * Planten zijn net kleine fabriekjes die hun eigen eten maken! Dat doen ze met iets dat
                                 fotosynthese heet.
                                 * Voor fotosynthese hebben planten drie dingen nodig:
-                                * **Zonlicht:** Net als wij energie uit ons eten halen, halen planten energie uit
+                                * Zonlicht: Net als wij energie uit ons eten halen, halen planten energie uit
                                 zonlicht.
-                                * **Water:** Planten nemen water op via hun wortels.
-                                * **Koolstofdioxide:** Dit is een gas dat in de lucht zit, en wij mensen ademen het uit.
+                                * Water: Planten nemen water op via hun wortels.
+                                * Koolstofdioxide: Dit is een gas dat in de lucht zit, en wij mensen ademen het uit.
                                 Planten ademen het juist in!
                                 * In de bladeren van de plant zitten kleine groene deeltjes, die heten bladgroenkorrels.
                                 Die zijn heel belangrijk!
                                 * De bladgroenkorrels vangen het zonlicht op.
                                 * Met de energie van het zonlicht, veranderen de planten het water en de koolstofdioxide
                                 in twee nieuwe dingen:
-                                * **Glucose:** Dit is een soort suiker, en dat is het eten van de plant. De plant
+                                * Glucose: Dit is een soort suiker, en dat is het eten van de plant. De plant
                                 gebruikt de glucose om te groeien.
-                                * **Zuurstof:** Dit is een gas dat wij mensen nodig hebben om te ademen. De plant ademt
+                                * Zuurstof: Dit is een gas dat wij mensen nodig hebben om te ademen. De plant ademt
                                 de zuurstof uit, en wij ademen het weer in!
                                 * Fotosynthese is dus superbelangrijk, niet alleen voor planten, maar ook voor ons!
                             </p>
@@ -258,11 +240,11 @@
                         <p><strong>Voorbeeld van een eenvoudig experiment:</strong></p>
                         <ol>
                             <li><strong>Prompt 1:</strong> "Geef 5 ideeën voor een les over breuken."</li>
-                            <li><strong>Prompt 2:</strong> "Geef 5 *creatieve* ideeën voor een les over breuken voor
-                                groep 6, waarbij leerlingen *actief* betrokken worden."</li>
+                            <li><strong>Prompt 2:</strong> "Geef 5 creatieve ideeën voor een les over breuken voor
+                                groep 6, waarbij leerlingen actief betrokken worden."</li>
                             <li><strong>Prompt 3:</strong> "Geef 5 ideeën voor een les over breuken voor groep 6,
-                                waarbij leerlingen actief betrokken worden. De les moet gebruikmaken van *visuele
-                                hulpmiddelen* en *coöperatieve leerstrategieën*."</li>
+                                waarbij leerlingen actief betrokken worden. De les moet gebruikmaken van visuele
+                                hulpmiddelen en coöperatieve leerstrategieën."</li>
                         </ol>
                         <p>Vergelijk de output van deze drie prompts. Je zult zien dat de toevoeging van sleutelwoorden
                             (creatief, actief, visuele hulpmiddelen, coöperatieve leerstrategieën) een groot verschil
@@ -372,11 +354,11 @@
                         <p>Denk hierbij aan:</p>
                         <ul>
                             <li><strong>Gerichte feedback genereren:</strong> Gebruik AI om feedback te genereren op
-                                basis van specifieke criteria. Let op: AI kan *niet* volledig autonoom beoordelen. Het
+                                basis van specifieke criteria. Let op: AI kan niet volledig autonoom beoordelen. Het
                                 kan wel helpen bij het identificeren van sterke en zwakke punten in studentenwerk.
                                 Bijvoorbeeld: "Analyseer de volgende tekst op consistentie van argumentatie en geef
-                                suggesties voor verbetering" (waarbij je de studententekst als input geeft). *Gebruik
-                                dit altijd als hulpmiddel, niet als vervanging van uw eigen beoordeling.*</li>
+                                suggesties voor verbetering" (waarbij je de studententekst als input geeft). Gebruik
+                                dit altijd als hulpmiddel, niet als vervanging van uw eigen beoordeling.</li>
                             <li><strong>Toetsvragen ontwikkelen:</strong> Genereer verschillende soorten toetsvragen
                                 (multiple choice, open vragen, essayvragen) op basis van de leerstof. Bijvoorbeeld:
                                 "Genereer 10 multiple-choice vragen over de belangrijkste concepten uit hoofdstuk 3 van
@@ -390,10 +372,10 @@
                                 argumentatie, structuur en brongebruik. Definieer vier prestatieniveaus: onvoldoende,
                                 voldoende, goed, uitstekend."</li>
                             <li><strong>Nakijkwerk efficiënter maken (met voorzichtigheid):</strong> AI kan potentieel
-                                helpen bij het *voorlopig* screenen van studentenwerk op plagiaat, het identificeren van
-                                veelvoorkomende fouten, of het samenvatten van de belangrijkste punten. *Echter, de
+                                helpen bij het voorlopig screenen van studentenwerk op plagiaat, het identificeren van
+                                veelvoorkomende fouten, of het samenvatten van de belangrijkste punten. Echter, de
                                 uiteindelijke beoordeling en het geven van cijfers blijft de verantwoordelijkheid van de
-                                docent.* Wees zeer voorzichtig met het gebruik van AI voor het nakijken, en houd
+                                docent. Wees zeer voorzichtig met het gebruik van AI voor het nakijken, en houd
                                 rekening met privacy, bias en de mogelijkheid van fouten.</li>
                         </ul>
                         <div class="note-box">
@@ -453,14 +435,14 @@
                                 </ul>
                             </li>
                             <li><strong>Few-Shot Prompting:</strong> Geef de AI een paar voorbeelden van de gewenste
-                                output *binnen* de prompt. Dit "traint" de AI on-the-fly om een bepaald patroon of een
+                                output binnen de prompt. Dit "traint" de AI on-the-fly om een bepaald patroon of een
                                 bepaalde stijl te volgen. Dit is bijzonder effectief voor het genereren van tekst in een
                                 specifieke academische stijl of voor het consistent toepassen van bepaalde criteria.
                                 <ul>
                                     <li><em>Voorbeeld:</em> U wilt beoordelingscriteria genereren voor een
                                         essayopdracht. U kunt de AI drie voorbeelden geven van goede, matige en slechte
                                         beoordelingen, samen met de bijbehorende criteria. Vervolgens vraagt u de AI om
-                                        criteria te genereren voor een *nieuwe* essayopdracht, gebaseerd op de geleerde
+                                        criteria te genereren voor een nieuwe essayopdracht, gebaseerd op de geleerde
                                         patronen.</li>
                                 </ul>
                             </li>
@@ -552,7 +534,7 @@
                         </p>
 
                         <ul>
-                            <li><strong>Transparantie:</strong> Wees transparant naar studenten over *wanneer* en *hoe*
+                            <li><strong>Transparantie:</strong> Wees transparant naar studenten over wanneer en hoe
                                 u AI gebruikt in uw onderwijs. Leg uit wat de doelen zijn, wat de voordelen zijn, en wat
                                 de potentiële beperkingen zijn.</li>
                             <li><strong>Kritische Evaluatie:</strong> Benadruk het belang van kritische evaluatie van
@@ -569,7 +551,7 @@
                                 richtlijnen van de VU (indien beschikbaar) en bespreek hoe deze richtlijnen van
                                 toepassing zijn op het gebruik van AI in uw vakgebied.</li>
                             <li><strong>Academische Integriteit:</strong> Maak duidelijk aan studenten dat het indienen
-                                van AI-gegenereerd werk als hun eigen werk *niet* is toegestaan. Bespreek hoe AI op een
+                                van AI-gegenereerd werk als hun eigen werk niet is toegestaan. Bespreek hoe AI op een
                                 verantwoorde en ethische manier kan worden gebruikt als hulpmiddel bij het leren en
                                 onderzoeken, maar niet als vervanging voor eigen werk.
                                 <ul>
@@ -581,11 +563,11 @@
                                 </ul>
                             </li>
                             <li><strong>Kwaliteitscontrole van AI-Output:</strong> Controleer altijd de AI-gegenereerde
-                                output *voordat* u deze deelt met studenten. Zorg ervoor dat de informatie accuraat,
+                                output voordat u deze deelt met studenten. Zorg ervoor dat de informatie accuraat,
                                 relevant, en up-to-date is. Corrigeer eventuele fouten en vul ontbrekende informatie
                                 aan.</li>
                             <li><strong>Toegankelijkheid:</strong> Houd rekening met de toegankelijkheid van AI-tools
-                                voor *alle* studenten. Zorg ervoor dat studenten met verschillende achtergronden en
+                                voor alle studenten. Zorg ervoor dat studenten met verschillende achtergronden en
                                 leermogelijkheden gelijke toegang hebben tot de benodigde technologie en ondersteuning.
                             </li>
                             <li><strong>Blijf Leren:</strong> De technologie van AI evolueert voortdurend. Blijf op de
