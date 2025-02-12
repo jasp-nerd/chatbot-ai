@@ -1,0 +1,167 @@
+:root {
+    --grey: #f5f5f5;
+    --blue: #3d88f9;
+    --black: #1a1a1a;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--white);
+}
+
+header {
+    background-color: var(--black);
+    padding: 1.5rem;
+    position: fixed;
+    width: 100%;
+    z-index: 997;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--blue);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 7rem 1.5rem 2rem;
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--black);
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.resource-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resource-card h3 {
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.resource-card p {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.resource-card a {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.resource-card a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 1rem;
+    }
+
+    nav a {
+        margin: 0 1rem;
+    }
+
+    main {
+        padding-top: 9rem;
+    }
+}
+
+/* Preserve your existing chat window styles */
+body.chat-open .chat-window {
+    display: flex;
+}
+
+.chat-button {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    z-index: 998;
+    background-color: var(--black);
+    color: white;
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.chat-button img {
+    width: 50px;
+}
+
+.chat-button:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* Your existing chat window styles remain the same */
+.chat-window {
+    display: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 20px;
+    background-color: white;
+    z-index: 999;
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    height: 600px;
+    width: 360px;
+    flex-direction: column;
+    justify-content: space-between;
+}

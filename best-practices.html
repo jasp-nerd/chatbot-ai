@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Practices - EduBot</title>
+    <link rel="stylesheet" href="article.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+    </script>
+    <script type="module" src="main.js"></script>
+</head>
+<body>
+    <section class="chat-window">
+        <button class="close">x close</button>
+        <div class="chat">
+            <div class="model">
+                <p>Hi, how can I help you?</p>
+            </div>
+        </div>
+        <div class="input-area">
+            <input placeholder="Ask me anything..." type="text">
+            <button>
+                <img src="send-icon.png" alt="Send">
+            </button>
+        </div>
+    </section>
+
+    <div class="chat-button">
+        <img src="chat-icon.png" alt="Chat">
+    </div>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="VU-logo-nobg.svg" alt="VU Logo" style="height: 40px;">
+                EduBot - Jouw AI Onderwijsassistent
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="best-practices.html">Best Practices</a>
+                <a href="prompt-engineering.html">Prompt Engineering</a>
+                <a href="ai-literacy-basics.html">AI Literacy Basics</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="module-section">
+                    <div class="module-title">1. Ethisch Gebruik van AI</div>
+                    <div class="module-items">
+                        <a href="#privacy">Privacy en Beveiliging</a>
+                        <a href="#fairness">Eerlijkheid en Inclusie</a>
+                        <a href="#transparency">Transparantie</a>
+                    </div>
+                </div>
+                <div class="module-section">
+                    <div class="module-title">2. Klaslokaal Implementatie</div>
+                    <div class="module-items">
+                        <a href="#integration">Integratie Strategieën</a>
+                        <a href="#assessment">Beoordeling met AI</a>
+                        <a href="#collaboration">Samenwerking Bevorderen</a>
+                    </div>
+                </div>
+                <div class="module-section">
+                    <div class="module-title">3. Differentiatie</div>
+                    <div class="module-items">
+                        <a href="#learning-styles">Leerstijlen</a>
+                        <a href="#adaptation">Aanpassing aan Niveau</a>
+                        <a href="#support">Ondersteuning op Maat</a>
+                    </div>
+                </div>
+                <div class="module-section">
+                    <div class="module-title">4. Evaluatie en Verbetering</div>
+                    <div class="module-items">
+                        <a href="#monitoring">Voortgang Monitoren</a>
+                        <a href="#feedback">Feedback Verzamelen</a>
+                        <a href="#iteration">Iteratief Verbeteren</a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        <main>
+            <h1>Best Practices voor AI in het Onderwijs</h1>
+            
+            <section id="privacy" class="content-section">
+                <h2>Privacy en Beveiliging</h2>
+                <p>Bij het implementeren van AI in het onderwijs is het essentieel om de privacy van leerlingen te waarborgen en de gegevens veilig te beheren.</p>
+                
+                <div class="tip-box">
+                    <strong>Belangrijke Overwegingen:</strong>
+                    <ul>
+                        <li>Zorg voor veilige gegevensopslag</li>
+                        <li>Beperk toegang tot persoonlijke informatie</li>
+                        <li>Informeer ouders en leerlingen</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <strong>Praktijkvoorbeeld:</strong>
+                    <p>Een school ontwikkelt een protocol voor het gebruik van AI-tools waarbij alleen geanonimiseerde gegevens worden gebruikt voor analyses.</p>
+                </div>
+            </section>
+
+            <!-- Additional sections would continue here -->
+        </main>
+    </div>
+</body>
+</html>

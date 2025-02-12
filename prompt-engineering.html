@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Engineering - EduBot</title>
+    <link rel="stylesheet" href="article.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+    </script>
+    <script type="module" src="main.js"></script>
+</head>
+<body>
+    <section class="chat-window">
+        <button class="close">x close</button>
+        <div class="chat">
+            <div class="model">
+                <p>Hi, how can I help you?</p>
+            </div>
+        </div>
+        <div class="input-area">
+            <input placeholder="Ask me anything..." type="text">
+            <button>
+                <img src="send-icon.png" alt="Send">
+            </button>
+        </div>
+    </section>
+
+    <div class="chat-button">
+        <img src="chat-icon.png" alt="Chat">
+    </div>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="VU-logo-nobg.svg" alt="VU Logo" style="height: 40px;">
+                EduBot - Jouw AI Onderwijsassistent
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="best-practices.html">Best Practices</a>
+                <a href="prompt-engineering.html">Prompt Engineering</a>
+                <a href="ai-literacy-basics.html">AI Literacy Basics</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="module-section">
+                    <div class="module-title">1. Introductie tot AI in Onderwijs</div>
+                    <div class="module-items">
+                        <a href="#basics">Basisprincipes van AI</a>
+                        <a href="#benefits">Voordelen voor het Onderwijs</a>
+                        <a href="#challenges">Uitdagingen en Oplossingen</a>
+                    </div>
+                </div>
+                <div class="module-section">
+                    <div class="module-title">2. Effectieve Prompts Schrijven</div>
+                    <div class="module-items">
+                        <a href="#structure">Structuur en Opbouw</a>
+                        <a href="#examples">Voorbeeldprompts</a>
+                        <a href="#dos-donts">Do's en Don'ts</a>
+                    </div>
+                </div>
+                <div class="module-section">
+                    <div class="module-title">3. Lesplannen met AI</div>
+                    <div class="module-items">
+                        <a href="#lesson-prep">Voorbereiding</a>
+                        <a href="#differentiation">Differentiatie</a>
+                        <a href="#feedback">Feedback Genereren</a>
+                    </div>
+                </div>
+                <div class="module-section">
+                    <div class="module-title">4. Praktische Toepassingen</div>
+                    <div class="module-items">
+                        <a href="#exercises">Oefeningen Maken</a>
+                        <a href="#assessment">Toetsing</a>
+                        <a href="#personalization">Personalisatie</a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        <main>
+            <h1>Prompt Engineering voor Docenten</h1>
+            
+            <section id="basics" class="content-section">
+                <h2>Basisprincipes van AI</h2>
+                <p>Artificial Intelligence (AI) is een krachtig hulpmiddel dat het onderwijs kan verrijken en personaliseren. Om AI effectief in te zetten, is het belangrijk om de basisprincipes te begrijpen.</p>
+                
+                <div class="tip-box">
+                    <strong>Tips voor Beginners:</strong>
+                    <ul>
+                        <li>Begin met eenvoudige prompts</li>
+                        <li>Wees specifiek in je vraagstelling</li>
+                        <li>Test verschillende formuleringen</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <strong>Voorbeeld Prompt:</strong>
+                    <p>"Genereer een lijst met 5 discussievragen over [onderwerp] die kritisch denken stimuleren bij [niveau] leerlingen."</p>
+                </div>
+            </section>
+
+            <section id="benefits" class="content-section">
+                <h2>Voordelen voor het Onderwijs</h2>
+                <p>AI kan docenten ondersteunen bij verschillende aspecten van het lesgeven, waaronder lesvoorbereiding, differentiatie en feedback. Het biedt mogelijkheden om het onderwijs te personaliseren en efficiënter te maken.</p>
+                
+                <div class="example-box">
+                    <strong>Praktijkvoorbeeld:</strong>
+                    <p>Een docent gebruikt AI om verschillende versies van dezelfde opdracht te maken voor verschillende niveaus binnen de klas, wat tijd bespaart en maatwerk mogelijk maakt.</p>
+                </div>
+            </section>
+
+            <!-- Additional sections would continue here -->
+        </main>
+    </div>
+</body>
+</html>

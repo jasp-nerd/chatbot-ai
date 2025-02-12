@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduBot - Jouw AI Onderwijsassistent</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">
+                <img src="VU-logo-nobg.svg" alt="VU Logo" style="height: 40px; vertical-align: middle;">
+                EduBot - Jouw AI Onderwijsassistent
+            </a>
+            <nav>
+                <a href="best-practices.html">Best Practices</a>
+                <a href="prompt-engineering.html">Prompt Engineering</a>
+                <a href="ai-literacy-basics.html">AI Literacy Basics</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="chatbot">
+            <h2 class="section-title">AI Chat Assistent</h2>
+            <p>Stel je vragen over AI in het onderwijs en ontdek hoe je effectieve prompts kunt maken voor je lessen.</p>
+        </section>
+
+        <section id="resources">
+            <h2 class="section-title">Educational Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h3>AI Literacy Basics</h3>
+                    <p>Ontdek de fundamentele concepten van AI en hoe deze kunnen worden toegepast in het onderwijs.</p>
+                    <a href="ai-literacy-basics.html">Meer informatie →</a>
+                </div>
+                <div class="resource-card">
+                    <h3>Prompt Engineering</h3>
+                    <p>Leer hoe je effectieve prompts schrijft voor verschillende onderwijsdoeleinden.</p>
+                    <a href="prompt-engineering.html">Bekijk tutorial →</a>
+                </div>
+                <div class="resource-card">
+                    <h3>Best Practices</h3>
+                    <p>Ontdek beproefde methoden voor het integreren van AI in je lessen.</p>
+                    <a href="best-practices.html">Lees meer →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Your existing chat button and window -->
+    <section class="chat-window">
+        <button class="close">x close</button>
+        <div class="chat">
+            <div class="model">
+                <p>Hi, how can I help you?</p>
+            </div>
+        </div>
+        <div class="input-area">
+            <input placeholder="Ask me anything..." type="text">
+            <button>
+                <img src="send-icon.png" alt="Send">
+            </button>
+        </div>
+    </section>
+
+    <div class="chat-button">
+        <img src="chat-icon.png" alt="Chat">
+    </div>
+
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+    </script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>

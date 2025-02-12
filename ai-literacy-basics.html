@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Literacy Basics - EduBot</title>
+    <link rel="stylesheet" href="article.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+    </script>
+    <script type="module" src="main.js"></script>
+</head>
+<body>
+    <section class="chat-window">
+        <button class="close">x close</button>
+        <div class="chat">
+            <div class="model">
+                <p>Hi, how can I help you?</p>
+            </div>
+        </div>
+        <div class="input-area">
+            <input placeholder="Ask me anything..." type="text">
+            <button>
+                <img src="send-icon.png" alt="Send">
+            </button>
+        </div>
+    </section>
+
+    <div class="chat-button">
+        <img src="chat-icon.png" alt="Chat">
+    </div>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <img src="VU-logo-nobg.svg" alt="VU Logo" style="height: 40px;">
+                EduBot - Jouw AI Onderwijsassistent
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="best-practices.html">Best Practices</a>
+                <a href="prompt-engineering.html">Prompt Engineering</a>
+                <a href="ai-literacy-basics.html">AI Literacy Basics</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="module-section">
+                    <div class="module-title">1. Fundamentele Concepten</div>
+                    <div class="module-items">
+                        <a href="#what-is-ai">Wat is AI?</a>
+                        <a href="#types">Types AI Systemen</a>
+                        <a href="#capabilities">Mogelijkheden en Beperkingen</a>
+                    </div>
+                </div>
+                <div class="module-section">
+                    <div class="module-title">2. AI in de Praktijk</div>
+                    <div class="module-items">
+                        <a href="#daily-use">Dagelijks Gebruik</a>
+                        <a href="#education">Onderwijstoepassingen</a>
+                        <a href="#future">Toekomstperspectieven</a>
+                    </div>
+                </div>
+                <div class="module-section">
+                    <div class="module-title">3. Kritisch Denken</div>
+                    <div class="module-items">
+                        <a href="#evaluation">Informatie Evalueren</a>
+                        <a href="#bias">Vooroordelen Herkennen</a>
+                        <a href="#fact-checking">Fact-Checking</a>
+                    </div>
+                </div>
+                <div class="module-section">
+                    <div class="module-title">4. Verantwoord Gebruik</div>
+                    <div class="module-items">
+                        <a href="#ethics">Ethische Overwegingen</a>
+                        <a href="#safety">Veilig Gebruik</a>
+                        <a href="#digital-citizenship">Digitaal Burgerschap</a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        <main>
+            <h1>AI Literacy Basics</h1>
+            
+            <section id="what-is-ai" class="content-section">
+                <h2>Wat is AI?</h2>
+                <p>Artificial Intelligence (AI) verwijst naar systemen die menselijke intelligentie kunnen nabootsen en taken kunnen uitvoeren die traditioneel menselijke intelligentie vereisen.</p>
+                
+                <div class="tip-box">
+                    <strong>Kernconcepten:</strong>
+                    <ul>
+                        <li>Machine Learning</li>
+                        <li>Natural Language Processing</li>
+                        <li>Patroonherkenning</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <strong>Praktijkvoorbeeld:</strong>
+                    <p>Een chatbot die natuurlijke gesprekken kan voeren en vragen kan beantwoorden, zoals ChatGPT of Claude.</p>
+                </div>
+            </section>
+
+            <!-- Additional sections would continue here -->
+        </main>
+    </div>
+</body>
+</html>
