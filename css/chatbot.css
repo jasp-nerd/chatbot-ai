@@ -11,7 +11,7 @@ body.chat-open {
 }
 
 .chat-button {
-    position: absolute;
+    position: fixed;
     bottom: 60px;
     right: 20px;
     z-index: 998;
@@ -44,7 +44,7 @@ body.chat-open {
     border-radius: 20px;
     background-color: white;
     z-index: 999;
-    position: absolute;
+    position: fixed;
     bottom: 60px;
     right: 20px;
     height: 600px;

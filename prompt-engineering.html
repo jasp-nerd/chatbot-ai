@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prompt Engineering - EduBot</title>
-    <link rel="stylesheet" href="article.css">
-    <link rel="stylesheet" href="chatbot.css">
+    <link rel="stylesheet" href="css/article.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <script>
+        document.querySelectorAll('.copy-button').forEach(button => {
+            button.addEventListener('click', function () {
+                const content = this.closest('.prompt-box, .ai-output-box')
+                    .querySelector('.content').textContent;
+                navigator.clipboard.writeText(content)
+                    .then(() => {
+                        const originalText = this.textContent;
+                        this.textContent = '✓ Copied!';
+                        setTimeout(() => {
+                            this.textContent = originalText;
+                        }, 2000);
+                    })
+                    .catch(err => {
+                        console.error('Failed to copy:', err);
+                    });
+            });
+        });
+    </script>
     <script type="importmap">
         {
           "imports": {
@@ -15,34 +35,34 @@
     </script>
     <script type="module" src="main.js"></script>
 </head>
+
 <body>
     <section class="chat-window">
         <button class="close">x close</button>
         <div class="chat">
             <div class="model">
-                <p>Hi, how can I help you?</p>
+                <p>Hi, hoe kan ik helpen?</p>
             </div>
         </div>
         <div class="input-area">
             <input placeholder="Ask me anything..." type="text">
             <button>
-                <img src="send-icon.png" alt="Send">
+                <img src="images/send-icon.png" alt="Send">
             </button>
         </div>
     </section>
 
     <div class="chat-button">
-        <img src="chat-icon.png" alt="Chat">
+        <img src="images/chat-icon.png" alt="Chat">
     </div>
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">
-                <img src="VU-logo-nobg.svg" alt="VU Logo" style="height: 40px;">
+                <img src="images/VU-logo-nobg.svg" alt="VU Logo" style="height: 40px;">
                 EduBot - Jouw AI Onderwijsassistent
             </a>
             <nav>
                 <a href="index.html">Home</a>
-                <a href="best-practices.html">Best Practices</a>
                 <a href="prompt-engineering.html">Prompt Engineering</a>
                 <a href="ai-literacy-basics.html">AI Literacy Basics</a>
             </nav>
@@ -52,73 +72,539 @@
         <aside class="sidebar">
             <nav class="sidebar-nav">
                 <div class="module-section">
-                    <div class="module-title">1. Introductie tot AI in Onderwijs</div>
+                    <div class="module-title">1. Basis van Prompting voor Docenten</div>
                     <div class="module-items">
-                        <a href="#basics">Basisprincipes van AI</a>
-                        <a href="#benefits">Voordelen voor het Onderwijs</a>
-                        <a href="#challenges">Uitdagingen en Oplossingen</a>
+                        <a href="#wat-zijn-prompts">1.1 Wat zijn Prompts?</a>
+                        <a href="#effectieve-prompts-schrijven">1.2 Effectieve Prompts Schrijven</a>
+                        <a href="#je-eerste-stappen">1.3 Je Eerste Stappen</a>
                     </div>
                 </div>
                 <div class="module-section">
-                    <div class="module-title">2. Effectieve Prompts Schrijven</div>
+                    <div class="module-title">2. Prompts in de Praktijk</div>
                     <div class="module-items">
-                        <a href="#structure">Structuur en Opbouw</a>
-                        <a href="#examples">Voorbeeldprompts</a>
-                        <a href="#dos-donts">Do's en Don'ts</a>
+                        <a href="#lesvoorbereiding-versnellen">2.1 Lesvoorbereiding Versnellen</a>
+                        <a href="#differentiatie-met-prompts">2.2 Differentiatie met Prompts</a>
+                        <a href="#feedback-en-evaluatie">2.3 Feedback en Evaluatie</a>
                     </div>
                 </div>
                 <div class="module-section">
-                    <div class="module-title">3. Lesplannen met AI</div>
+                    <div class="module-title">3. Geavanceerd Prompten</div>
                     <div class="module-items">
-                        <a href="#lesson-prep">Voorbereiding</a>
-                        <a href="#differentiation">Differentiatie</a>
-                        <a href="#feedback">Feedback Genereren</a>
-                    </div>
-                </div>
-                <div class="module-section">
-                    <div class="module-title">4. Praktische Toepassingen</div>
-                    <div class="module-items">
-                        <a href="#exercises">Oefeningen Maken</a>
-                        <a href="#assessment">Toetsing</a>
-                        <a href="#personalization">Personalisatie</a>
+                        <a href="#prompt-strategieen">3.1 Prompt Strategieën</a>
+                        <a href="#creatief-lesgeven">3.2 Creatief Lesgeven</a>
+                        <a href="#best-practices">3.3 Best Practices</a>
                     </div>
                 </div>
             </nav>
         </aside>
         <main>
-            <h1>Prompt Engineering voor Docenten</h1>
-            
-            <section id="basics" class="content-section">
-                <h2>Basisprincipes van AI</h2>
-                <p>Artificial Intelligence (AI) is een krachtig hulpmiddel dat het onderwijs kan verrijken en personaliseren. Om AI effectief in te zetten, is het belangrijk om de basisprincipes te begrijpen.</p>
-                
-                <div class="tip-box">
-                    <strong>Tips voor Beginners:</strong>
-                    <ul>
-                        <li>Begin met eenvoudige prompts</li>
-                        <li>Wees specifiek in je vraagstelling</li>
-                        <li>Test verschillende formuleringen</li>
-                    </ul>
-                </div>
+            <article class="prompt-engineering">
+                <h1>1. Basis van Prompting voor Docenten</h1>
 
-                <div class="example-box">
-                    <strong>Voorbeeld Prompt:</strong>
-                    <p>"Genereer een lijst met 5 discussievragen over [onderwerp] die kritisch denken stimuleren bij [niveau] leerlingen."</p>
-                </div>
-            </section>
+                <section id="wat-zijn-prompts" class="content-section">
+                    <h2>1.1 Wat zijn Prompts?</h2>
+                    <p>
+                        Prompts zijn in essentie de vragen of instructies die je geeft aan een AI-model, zoals ChatGPT,
+                        Gemini, of een ander generatief AI-systeem. Ze vormen de brug tussen jouw gedachten en de output
+                        van de AI. Een goede prompt is als een heldere, gerichte vraag aan een slimme assistent. Hoe
+                        preciezer en duidelijker je vraag, hoe beter het antwoord dat je terugkrijgt. In een
+                        onderwijscontext zijn prompts cruciaal om AI te gebruiken voor taken zoals het genereren van
+                        lesmateriaal, het maken van opdrachten, het geven van feedback, of het bedenken van creatieve
+                        lesideeën.
+                    </p>
+                    <p>
+                        Denk aan prompts als het stellen van een onderzoeksvraag. Je begint met een breed idee, maar om
+                        echt nuttige informatie te krijgen, moet je je vraag specificeren. Bijvoorbeeld, in plaats van
+                        te vragen "Vertel me iets over de Tweede Wereldoorlog", kun je vragen: "Geef een overzicht van
+                        de belangrijkste oorzaken van de Tweede Wereldoorlog, geschikt voor leerlingen van 18-21 jaar op
+                        de universiteit."
+                        Het verschil in specificiteit leidt tot een veel bruikbaarder resultaat.
+                    </p>
+                    <div class="tip-box">
+                        <p><strong>Tip:</strong> Beschouw de AI als een expert op elk gebied, maar die expert heeft wel
+                            *jouw* begeleiding nodig om te weten welk specifiek stukje expertise je nodig hebt. Jouw
+                            prompt is die begeleiding.</p>
+                    </div>
+                    <div class="note-box">
+                        <div class="note-icon">!</div>
+                        <div class="note-content">
+                            <p>
+                                <strong>Belangrijk:</strong> Prompts zijn niet alleen losse vragen. Ze kunnen ook
+                                context, voorbeelden, gewenste formaten, en zelfs de 'persoonlijkheid' van de AI
+                                beïnvloeden.
+                            </p>
+                        </div>
+                    </div>
+                </section>
 
-            <section id="benefits" class="content-section">
-                <h2>Voordelen voor het Onderwijs</h2>
-                <p>AI kan docenten ondersteunen bij verschillende aspecten van het lesgeven, waaronder lesvoorbereiding, differentiatie en feedback. Het biedt mogelijkheden om het onderwijs te personaliseren en efficiënter te maken.</p>
-                
-                <div class="example-box">
-                    <strong>Praktijkvoorbeeld:</strong>
-                    <p>Een docent gebruikt AI om verschillende versies van dezelfde opdracht te maken voor verschillende niveaus binnen de klas, wat tijd bespaart en maatwerk mogelijk maakt.</p>
-                </div>
-            </section>
+                <section id="effectieve-prompts-schrijven" class="content-section">
+                    <h2>1.2 Effectieve Prompts Schrijven</h2>
+                    <p>
+                        Het schrijven van effectieve prompts is een vaardigheid die je ontwikkelt door te oefenen en te
+                        experimenteren. Er zijn echter een paar basisprincipes die je op weg helpen:
+                    </p>
+                    <ol>
+                        <li><strong>Wees specifiek:</strong> Vermijd vage of algemene termen. Hoe specifieker je bent
+                            over het onderwerp, de doelgroep, het gewenste detailniveau en de output, hoe beter.</li>
+                        <li><strong>Geef context:</strong> Vertel de AI *waarom* je deze informatie nodig hebt. Wat is
+                            het doel van de vraag? Voor wie is het bedoeld? Dit helpt de AI om de relevantie van de
+                            informatie beter te beoordelen.</li>
+                        <li><strong>Stel duidelijke instructies:</strong> Gebruik actieve werkwoorden en geef aan wat je
+                            precies verwacht van de AI. Wil je een lijst, een samenvatting, een uitleg, een
+                            vergelijking, een creatief verhaal, code, etc.?</li>
+                        <li><strong>Specificeer het formaat:</strong> Wil je de output in bulletpoints, in een tabel,
+                            als een paragraaf tekst, of in een ander specifiek formaat? Wees hier expliciet in.</li>
+                        <li><strong>Gebruik voorbeelden (indien relevant):</strong> Als je een bepaald type output in
+                            gedachten hebt, kan het helpen om een voorbeeld te geven aan de AI. Dit geeft de AI een
+                            beter idee van de gewenste stijl, toon, en structuur.</li>
+                        <li><strong>Stel grenzen:</strong> Geef de AI duidelijke beperkingen. Moet het antwoord een
+                            bepaald aantal woorden bevatten? Moet het zich beperken tot een bepaalde tijdsperiode of een
+                            specifieke bron?</li>
+                    </ol>
 
-            <!-- Additional sections would continue here -->
+                    <p>Laten we eens kijken naar een voorbeeld van hoe je een zwakke prompt kunt omzetten in een sterke
+                        prompt:</p>
+
+                    <div class="example-box">
+                        <p><strong>Zwakke prompt:</strong> "Schrijf iets over fotosynthese."</p>
+                        <p><strong>Sterke prompt:</strong> "Schrijf een uitleg van het proces van fotosynthese, gericht
+                            op leerlingen van groep 8 van de basisschool. Gebruik eenvoudige taal en vermijd
+                            wetenschappelijke jargon. Leg uit hoe planten zonlicht, water en koolstofdioxide gebruiken
+                            om glucose en zuurstof te produceren. De uitleg moet ongeveer 200 woorden lang zijn en in
+                            bulletpoints worden weergegeven."</p>
+                    </div>
+                    <div class="prompt-container">
+                        <div class="prompt-box">
+                            <div class="box-header">
+                                <div class="box-title">
+                                    <span class="icon">P</span>
+                                    Prompt
+                                </div>
+                                <button class="copy-button">Copy</button>
+                            </div>
+                            <p class="content">Schrijf een uitleg van het proces van fotosynthese, gericht op leerlingen
+                                van groep 8 van de basisschool. Gebruik eenvoudige taal en vermijd wetenschappelijke
+                                jargon. Leg uit hoe planten zonlicht, water en koolstofdioxide gebruiken om glucose en
+                                zuurstof te produceren. De uitleg moet ongeveer 200 woorden lang zijn en in bulletpoints
+                                worden weergegeven.</p>
+                        </div>
+
+                        <div class="ai-output-box">
+                            <div class="box-header">
+                                <div class="box-title">
+                                    <span class="icon">AI</span>
+                                    AI Output
+                                </div>
+                                <button class="copy-button">Copy</button>
+                            </div>
+                            <p class="content">
+                                * Planten zijn net kleine fabriekjes die hun eigen eten maken! Dat doen ze met iets dat
+                                fotosynthese heet.
+                                * Voor fotosynthese hebben planten drie dingen nodig:
+                                * **Zonlicht:** Net als wij energie uit ons eten halen, halen planten energie uit
+                                zonlicht.
+                                * **Water:** Planten nemen water op via hun wortels.
+                                * **Koolstofdioxide:** Dit is een gas dat in de lucht zit, en wij mensen ademen het uit.
+                                Planten ademen het juist in!
+                                * In de bladeren van de plant zitten kleine groene deeltjes, die heten bladgroenkorrels.
+                                Die zijn heel belangrijk!
+                                * De bladgroenkorrels vangen het zonlicht op.
+                                * Met de energie van het zonlicht, veranderen de planten het water en de koolstofdioxide
+                                in twee nieuwe dingen:
+                                * **Glucose:** Dit is een soort suiker, en dat is het eten van de plant. De plant
+                                gebruikt de glucose om te groeien.
+                                * **Zuurstof:** Dit is een gas dat wij mensen nodig hebben om te ademen. De plant ademt
+                                de zuurstof uit, en wij ademen het weer in!
+                                * Fotosynthese is dus superbelangrijk, niet alleen voor planten, maar ook voor ons!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tip-box">
+                        <p><strong>Tip:</strong> Experimenteer met het toevoegen van een "rol" aan je prompt.
+                            Bijvoorbeeld: "Doe alsof je een piraat bent en leg uit..." of "Stel je voor dat je een
+                            wetenschapper bent die uitleg geeft aan een groep kinderen...". Dit kan leiden tot
+                            creatievere en boeiendere outputs.</p>
+                    </div>
+                </section>
+
+                <section id="je-eerste-stappen" class="content-section">
+                    <h2>1.3 Je Eerste Stappen</h2>
+                    <p>
+                        De beste manier om prompt engineering te leren is door te doen! Begin klein en bouw geleidelijk
+                        aan je vaardigheden op. Hier zijn een paar suggesties voor je eerste stappen:
+                    </p>
+                    <ol>
+                        <li><strong>Begin met eenvoudige vragen:</strong> Stel vragen over onderwerpen waar je al bekend
+                            mee bent. Dit helpt je om de reacties van de AI te beoordelen en te zien of de output
+                            overeenkomt met je verwachtingen.</li>
+                        <li><strong>Experimenteer met verschillende formuleringen:</strong> Probeer dezelfde vraag op
+                            verschillende manieren te stellen. Voeg context toe, verander de instructies, specificeer
+                            het formaat. Observeer hoe de output verandert.</li>
+                        <li><strong>Gebruik de AI voor verschillende taken:</strong> Probeer prompts te schrijven voor
+                            het genereren van lesideeën, het maken van quizvragen, het samenvatten van teksten, het
+                            uitleggen van concepten, etc.</li>
+                        <li><strong>Analyseer de output kritisch:</strong> Lees de output van de AI altijd zorgvuldig
+                            door. Klopt de informatie? Is het relevant? Is het geschikt voor je doelgroep? Zo niet, pas
+                            je prompt aan en probeer het opnieuw.</li>
+                        <li><strong>Iteratief verbeteren:</strong> Prompt engineering is een iteratief proces. Je zult
+                            zelden in één keer de perfecte prompt schrijven. Gebruik de output van de AI als feedback om
+                            je prompts te verfijnen.</li>
+                        <li><strong>Documenteer je experimenten:</strong> Houd bij welke prompts goed werken en welke
+                            niet. Maak aantekeningen over wat je hebt geleerd. Dit helpt om een "prompt bibliotheek" op
+                            te bouwen van effectieve prompts die je kunt hergebruiken.</li>
+                    </ol>
+                    <div class="example-box">
+                        <p><strong>Voorbeeld van een eenvoudig experiment:</strong></p>
+                        <ol>
+                            <li><strong>Prompt 1:</strong> "Geef 5 ideeën voor een les over breuken."</li>
+                            <li><strong>Prompt 2:</strong> "Geef 5 *creatieve* ideeën voor een les over breuken voor
+                                groep 6, waarbij leerlingen *actief* betrokken worden."</li>
+                            <li><strong>Prompt 3:</strong> "Geef 5 ideeën voor een les over breuken voor groep 6,
+                                waarbij leerlingen actief betrokken worden. De les moet gebruikmaken van *visuele
+                                hulpmiddelen* en *coöperatieve leerstrategieën*."</li>
+                        </ol>
+                        <p>Vergelijk de output van deze drie prompts. Je zult zien dat de toevoeging van sleutelwoorden
+                            (creatief, actief, visuele hulpmiddelen, coöperatieve leerstrategieën) een groot verschil
+                            maakt in de relevantie en bruikbaarheid van de ideeën.</p>
+                    </div>
+                    <div class="tip-box">
+                        <p><strong>Tip:</strong> Wees niet bang om te experimenteren! Er is geen "goed" of "fout" in
+                            prompt engineering. Het gaat erom te ontdekken wat het beste werkt voor jou en je specifieke
+                            behoeften.</p>
+                    </div>
+
+                    <h1>2. Prompts in de Praktijk</h1>
+
+                    <section id="lesvoorbereiding-versnellen">
+                        <h2>2.1 Lesvoorbereiding Versnellen</h2>
+                        <p>
+                            In de academische wereld is tijd een kostbaar goed. AI kan een krachtige bondgenoot zijn in
+                            het stroomlijnen van uw lesvoorbereiding, waardoor u meer tijd overhoudt voor onderzoek,
+                            studentenbegeleiding en andere cruciale taken. Het gaat niet om het vervangen van uw
+                            expertise, maar om het efficiënt ontsluiten van informatie en het genereren van
+                            basisstructuren die u vervolgens kunt verfijnen en aanpassen.
+                        </p>
+                        <p>Denk aan de volgende toepassingen:</p>
+                        <ul>
+                            <li><strong>Snel literatuuroverzichten genereren:</strong> Vraag de AI om een samenvatting
+                                te geven van de belangrijkste artikelen over een specifiek onderwerp, inclusief de
+                                belangrijkste bevindingen en discussiepunten. Bijvoorbeeld: "Geef een overzicht van de
+                                recente literatuur (laatste 5 jaar) over de impact van AI op ethische besluitvorming in
+                                de gezondheidszorg, met aandacht voor de belangrijkste debatten en onopgeloste vragen."
+                            </li>
+                            <li><strong>Lesstructuren opzetten:</strong> Vraag de AI om een voorstel te doen voor de
+                                opbouw van een college over een bepaald thema, inclusief leerdoelen, kernbegrippen,
+                                discussievragen en mogelijke opdrachten. Bijvoorbeeld: "Ontwerp een college van 2 uur
+                                over kwalitatieve onderzoeksmethoden in de sociologie, gericht op masterstudenten.
+                                Inclusief leerdoelen, een overzicht van verschillende methoden (interviews,
+                                focusgroepen, etnografie), discussievragen over validiteit en betrouwbaarheid, en een
+                                voorstel voor een praktische opdracht."</li>
+                            <li><strong>Werkbladen en opdrachten creëren:</strong> Genereer snel concepten voor
+                                opdrachten die aansluiten bij de leerdoelen van uw cursus. Bijvoorbeeld: "Genereer drie
+                                discussievragen voor een seminar over de filosofie van John Rawls, gericht op het
+                                stimuleren van kritisch denken over rechtvaardigheid en gelijkheid."</li>
+                            <li><strong>Presentaties voorbereiden:</strong> Laat AI een outline genereren met de
+                                belangrijkste punten voor je college, inclusief suggesties voor visuals of relevante
+                                cases.
+                        </ul>
+                        <div class="tip-box">
+                            <p><strong>Tip:</strong> Gebruik de AI als een "sparringpartner" om uw eigen ideeën aan te
+                                scherpen. Vraag bijvoorbeeld: "Wat zijn de zwakke punten in mijn argumentatie over...?"
+                                of "Welke alternatieve perspectieven zou ik moeten overwegen in mijn college over...?"
+                            </p>
+                        </div>
+                        <div class="note-box">
+                            <div class="note-icon">!</div>
+                            <div class="note-content">
+                                <p><strong>Belangrijk:</strong> Controleer altijd de output van de AI op nauwkeurigheid
+                                    en relevantie. AI-modellen kunnen soms foutieve of verouderde informatie genereren.
+                                    Beschouw de output als een startpunt, niet als een eindproduct.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="differentiatie-met-prompts">
+                        <h2>2.2 Differentiatie met Prompts</h2>
+                        <p>
+                            Ook in het hoger onderwijs is differentiatie essentieel. Studenten hebben verschillende
+                            achtergronden, leerstijlen en ambitieniveaus. AI kan u helpen om uw onderwijs af te stemmen
+                            op deze diverse behoeften, zonder dat dit ten koste gaat van de academische standaarden.
+                        </p>
+                        <p>Mogelijke toepassingen:</p>
+                        <ul>
+                            <li><strong>Verschillende niveaus van uitleg:</strong> Vraag de AI om hetzelfde concept op
+                                verschillende niveaus van complexiteit uit te leggen. Bijvoorbeeld: "Leg het concept
+                                'confirmation bias' uit op een niveau dat geschikt is voor eerstejaarsstudenten
+                                psychologie" en vervolgens: "Leg hetzelfde concept uit op een niveau dat geschikt is
+                                voor promovendi."</li>
+                            <li><strong>Aanpassen van opdrachten:</strong> Bied studenten keuzemogelijkheden in
+                                opdrachten, zodat ze kunnen kiezen voor een aanpak die past bij hun interesses en sterke
+                                punten. Gebruik AI om verschillende varianten van een opdracht te genereren.
+                                Bijvoorbeeld: "Genereer drie verschillende opdrachten voor een paper over de ethiek van
+                                kunstmatige intelligentie, waarbij studenten kunnen kiezen tussen een filosofische
+                                analyse, een casestudy, of een literatuuronderzoek."</li>
+                            <li><strong>Persoonlijke leerdoelen:</strong> Help studenten bij het formuleren van
+                                persoonlijke leerdoelen die aansluiten bij hun individuele ambities en ontwikkelpunten.
+                                Gebruik AI om suggesties te genereren op basis van de cursusinhoud.</li>
+                            <li><strong>Extra uitdaging voor gevorderde studenten:</strong> Genereer verdiepende vragen
+                                of opdrachten voor studenten die meer uitdaging zoeken. Bijvoorbeeld: "Genereer drie
+                                uitdagende discussievragen over de beperkingen van het Turing-testconcept, geschikt voor
+                                studenten die al bekend zijn met de basisprincipes van AI."</li>
+                            <li><strong>Ondersteuning voor studenten die moeite hebben:</strong> Genereer extra
+                                oefenmateriaal, samenvattingen of vereenvoudigde uitleg van complexe concepten.</li>
+                        </ul>
+                        <div class="tip-box">
+                            <p><strong>Tip:</strong> Vraag de AI om feedback te geven op studentenwerk, gericht op
+                                specifieke aspecten (bijv. argumentatie, structuur, brongebruik). Dit kan u tijd
+                                besparen en studenten gerichte feedback geven. Let wel op de privacy en ethische
+                                aspecten van het gebruik van AI voor feedback.</p>
+                        </div>
+                    </section>
+
+                    <section id="feedback-en-evaluatie">
+                        <h2>2.3 Feedback en Evaluatie</h2>
+                        <p>
+                            Effectieve feedback en evaluatie zijn cruciaal voor het leerproces. AI kan u ondersteunen
+                            bij het genereren van gerichte feedback, het ontwikkelen van toetsvragen en het efficiënter
+                            maken van het nakijkproces (met inachtneming van privacy en ethische overwegingen).
+                        </p>
+                        <p>Denk hierbij aan:</p>
+                        <ul>
+                            <li><strong>Gerichte feedback genereren:</strong> Gebruik AI om feedback te genereren op
+                                basis van specifieke criteria. Let op: AI kan *niet* volledig autonoom beoordelen. Het
+                                kan wel helpen bij het identificeren van sterke en zwakke punten in studentenwerk.
+                                Bijvoorbeeld: "Analyseer de volgende tekst op consistentie van argumentatie en geef
+                                suggesties voor verbetering" (waarbij je de studententekst als input geeft). *Gebruik
+                                dit altijd als hulpmiddel, niet als vervanging van uw eigen beoordeling.*</li>
+                            <li><strong>Toetsvragen ontwikkelen:</strong> Genereer verschillende soorten toetsvragen
+                                (multiple choice, open vragen, essayvragen) op basis van de leerstof. Bijvoorbeeld:
+                                "Genereer 10 multiple-choice vragen over de belangrijkste concepten uit hoofdstuk 3 van
+                                [boeknaam], inclusief de juiste antwoorden en afleiders." of "Formuleer drie essayvragen
+                                die studenten aanzetten tot kritische reflectie op de theorie van [theoreticus] in
+                                relatie tot [hedendaags probleem]."</li>
+                            <li><strong>Rubrics creëren:</strong> Ontwikkel beoordelingsrubrics voor opdrachten,
+                                presentaties of papers. AI kan helpen bij het formuleren van criteria en
+                                prestatieniveaus. Bijvoorbeeld: "Maak een rubric voor het beoordelen van een
+                                wetenschappelijk paper, met criteria voor originaliteit, methodologische kwaliteit,
+                                argumentatie, structuur en brongebruik. Definieer vier prestatieniveaus: onvoldoende,
+                                voldoende, goed, uitstekend."</li>
+                            <li><strong>Nakijkwerk efficiënter maken (met voorzichtigheid):</strong> AI kan potentieel
+                                helpen bij het *voorlopig* screenen van studentenwerk op plagiaat, het identificeren van
+                                veelvoorkomende fouten, of het samenvatten van de belangrijkste punten. *Echter, de
+                                uiteindelijke beoordeling en het geven van cijfers blijft de verantwoordelijkheid van de
+                                docent.* Wees zeer voorzichtig met het gebruik van AI voor het nakijken, en houd
+                                rekening met privacy, bias en de mogelijkheid van fouten.</li>
+                        </ul>
+                        <div class="note-box">
+                            <div class="note-icon">!</div>
+                            <div class="note-content">
+                                <p><strong>Privacy en ethiek:</strong> Wees uiterst voorzichtig met het delen van
+                                    studentgegevens met AI-tools. Zorg ervoor dat u voldoet aan de AVG-richtlijnen en de
+                                    ethische code van de VU. Gebruik bij voorkeur geanonimiseerde data en vermijd het
+                                    gebruik van commerciële AI-tools die studentgegevens kunnen opslaan of gebruiken
+                                    voor andere doeleinden. Overleg met de FG (Functionaris Gegevensbescherming) van de
+                                    VU bij twijfel.</p>
+                            </div>
+                        </div>
+
+                        <div class="tip-box">
+                            <p><strong>Tip:</strong> Gebruik AI om verschillende versies van toetsvragen te genereren,
+                                en selecteer vervolgens de beste vragen. Dit helpt om de validiteit en betrouwbaarheid
+                                van uw toetsen te verhogen.</p>
+                        </div>
+                    </section>
+
+                    <h1>3. Geavanceerd Prompten</h1>
+
+                    <section id="prompt-strategieen">
+                        <h2>3.1 Prompt Strategieën</h2>
+                        <p>
+                            Naarmate u meer vertrouwd raakt met basisprompting, kunt u geavanceerdere strategieën
+                            verkennen om de kracht van AI volledig te benutten in uw universitaire onderwijs. Deze
+                            strategieën gaan verder dan het stellen van eenvoudige vragen en omvatten het combineren van
+                            prompts, het iteratief verfijnen van resultaten, en het aanpassen van prompts aan specifieke
+                            academische disciplines.
+                        </p>
+
+                        <ul>
+                            <li><strong>Ketenen van Prompts (Prompt Chaining):</strong> In plaats van één enkele,
+                                complexe prompt te gebruiken, kunt u een reeks van gerelateerde prompts opbouwen. De
+                                output van de ene prompt wordt dan de input voor de volgende. Dit is vooral nuttig voor
+                                het simuleren van dialogen, het stapsgewijs ontwikkelen van argumenten, of het uitvoeren
+                                van complexe analyses.
+                                <ul>
+                                    <li><em>Voorbeeld:</em> U kunt beginnen met een prompt die een AI een
+                                        onderzoeksartikel laat samenvatten. Vervolgens kunt u een vervolgprompt
+                                        gebruiken om de AI te vragen de belangrijkste methodologische zwakheden van het
+                                        artikel te identificeren. Een derde prompt kan dan suggesties genereren voor
+                                        toekomstig onderzoek op basis van deze zwakheden.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Iteratief Verfijnen (Iterative Refinement):</strong> Beschouw de eerste output
+                                van een AI-model zelden als definitief. Gebruik de resultaten als startpunt en stel
+                                vervolgprompts om de output te verfijnen, aan te vullen, of te corrigeren. Dit is een
+                                essentieel onderdeel van academisch onderzoek en schrijven.
+                                <ul>
+                                    <li><em>Voorbeeld:</em> Als u de AI vraagt om een literatuuroverzicht te genereren,
+                                        kunt u de eerste versie gebruiken om ontbrekende bronnen of perspectieven te
+                                        identificeren. Vervolgprompts kunnen de AI vervolgens instrueren om deze lacunes
+                                        op te vullen.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Few-Shot Prompting:</strong> Geef de AI een paar voorbeelden van de gewenste
+                                output *binnen* de prompt. Dit "traint" de AI on-the-fly om een bepaald patroon of een
+                                bepaalde stijl te volgen. Dit is bijzonder effectief voor het genereren van tekst in een
+                                specifieke academische stijl of voor het consistent toepassen van bepaalde criteria.
+                                <ul>
+                                    <li><em>Voorbeeld:</em> U wilt beoordelingscriteria genereren voor een
+                                        essayopdracht. U kunt de AI drie voorbeelden geven van goede, matige en slechte
+                                        beoordelingen, samen met de bijbehorende criteria. Vervolgens vraagt u de AI om
+                                        criteria te genereren voor een *nieuwe* essayopdracht, gebaseerd op de geleerde
+                                        patronen.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Temperatuur en Top-p Aanpassen (Geavanceerd):</strong> Sommige AI-modellen, via
+                                hun API's, bieden parameters zoals "temperatuur" en "top-p" die de willekeurigheid en
+                                creativiteit van de output beïnvloeden. Lagere temperaturen leiden tot meer voorspelbare
+                                en conservatieve outputs, terwijl hogere temperaturen meer diversiteit en onverwachte
+                                resultaten opleveren. Experimenteer met deze parameters om de output af te stemmen op uw
+                                specifieke behoeften (dit vereist doorgaans het gebruik van een API, niet een
+                                chat-interface).</li>
+                            <li><strong>Prompt Templates voor Specifieke Vakgebieden:</strong> Ontwikkel herbruikbare
+                                prompt templates die zijn afgestemd op de specifieke behoeften van uw vakgebied. Deze
+                                templates kunnen variabelen bevatten die u invult voor specifieke opdrachten of
+                                onderzoeksvragen.
+                                <ul>
+                                    <li><em>Voorbeeld (Rechten):</em> "Analyseer de volgende juridische casus:
+                                        [Casusbeschrijving]. Identificeer de relevante rechtsvragen, pas de relevante
+                                        wetgeving toe ([Wetgeving]), en beargumenteer de meest waarschijnlijke uitkomst,
+                                        rekening houdend met relevante jurisprudentie ([Jurisprudentie])."</li>
+                                    <li><em>Voorbeeld (Economie):</em> "Genereer een hypothetisch scenario waarin
+                                        [Economische verandering]. Analyseer de potentiële impact op [Economische
+                                        variabelen], gebruikmakend van het [Economisch model]. Bespreek de
+                                        beleidsimplicaties."</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="tip-box">
+                            <p><strong>Tip:</strong> Deel effectieve prompt templates met collega's binnen uw faculteit
+                                of vakgroep om best practices te bevorderen en de efficiëntie te verhogen.</p>
+                        </div>
+                    </section>
+
+                    <section id="creatief-lesgeven">
+                        <h2>3.2 Creatief Lesgeven</h2>
+                        <p>
+                            AI kan een krachtig hulpmiddel zijn om de betrokkenheid van studenten te vergroten en
+                            creativiteit in uw onderwijs te stimuleren. Door slim gebruik te maken van prompts, kunt u
+                            interactieve leerervaringen ontwerpen die verder gaan dan traditionele lesmethoden.
+                        </p>
+
+                        <ul>
+                            <li><strong>Interactieve Casestudy's:</strong> Genereer realistische of hypothetische
+                                casestudy's die studenten uitdagen om kritisch te denken en complexe problemen op te
+                                lossen. U kunt de AI gebruiken om verschillende scenario's, personages, en uitdagingen
+                                te creëren. Vervolgens kunt u prompt chaining gebruiken om studenten door de casus te
+                                leiden, waarbij ze beslissingen moeten nemen en de consequenties van hun keuzes moeten
+                                analyseren.</li>
+                            <li><strong>Debat- en Discussie-starters:</strong> Vraag de AI om controversiële stellingen
+                                of dilemma's te genereren die relevant zijn voor uw vakgebied. Dit kan dienen als
+                                startpunt voor levendige discussies in de collegezaal of online. U kunt de AI ook vragen
+                                om argumenten voor en tegen een bepaalde stelling te genereren, om studenten te helpen
+                                verschillende perspectieven te begrijpen.</li>
+                            <li><strong>Simulaties en Rollenspellen:</strong> Gebruik AI om de parameters en regels van
+                                simulaties of rollenspellen te definiëren. Dit kan variëren van het simuleren van een
+                                economische markt tot het naspelen van een historische gebeurtenis. Studenten kunnen
+                                vervolgens interacteren met de AI (of met elkaar, op basis van de door de AI
+                                gegenereerde output) om de uitkomsten van de simulatie te beïnvloeden.</li>
+                            <li><strong>Creatieve Schrijfopdrachten:</strong> Daag studenten uit om AI te gebruiken als
+                                co-auteur of inspiratiebron voor creatieve schrijfopdrachten. Ze kunnen bijvoorbeeld een
+                                prompt schrijven om een kort verhaal te genereren, en vervolgens dat verhaal analyseren,
+                                bewerken, of uitbreiden. Dit helpt studenten om de mogelijkheden en beperkingen van AI
+                                te begrijpen, en om hun eigen creatieve stem te ontwikkelen.</li>
+                            <li><strong>Ontwikkeling van Onderzoeksvragen:</strong> Leer studenten hoe ze AI kunnen
+                                gebruiken om hun eigen onderzoeksvragen te formuleren en te verfijnen. Ze kunnen
+                                beginnen met een breed onderzoeksgebied en vervolgens iteratief prompts gebruiken om tot
+                                een specifieke, onderzoekbare vraag te komen.
+                            <li><strong>Genereer Alternatieve Perspectieven:</strong> Vraag de AI om alternatieve
+                                verklaringen, theorieën of interpretaties te genereren voor een bepaald fenomeen. Dit
+                                bevordert kritisch denken en het overwegen van verschillende gezichtspunten.</li>
+                            </li>
+                        </ul>
+                        <div class="note-box">
+                            <div class="note-icon">!</div>
+                            <div class="note-content">
+                                <p>
+                                    <strong>Belangrijk:</strong> Moedig studenten aan om de AI-gegenereerde output
+                                    kritisch te evalueren en te verifiëren. AI is een hulpmiddel, geen vervanging voor
+                                    kritisch denken en bronnenonderzoek.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="best-practices">
+                        <h2>3.3 Best Practices</h2>
+                        <p>
+                            Het gebruik van AI in het hoger onderwijs vereist een zorgvuldige afweging van ethische,
+                            pedagogische en praktische aspecten. Hier zijn enkele best practices om te overwegen:
+                        </p>
+
+                        <ul>
+                            <li><strong>Transparantie:</strong> Wees transparant naar studenten over *wanneer* en *hoe*
+                                u AI gebruikt in uw onderwijs. Leg uit wat de doelen zijn, wat de voordelen zijn, en wat
+                                de potentiële beperkingen zijn.</li>
+                            <li><strong>Kritische Evaluatie:</strong> Benadruk het belang van kritische evaluatie van
+                                AI-gegenereerde output. AI-modellen kunnen fouten maken, verouderde informatie
+                                gebruiken, of bevooroordeelde resultaten produceren. Leer studenten om AI-output te
+                                beschouwen als een startpunt, niet als een definitief antwoord.
+                                <ul>
+                                    <li>Moedig studenten aan bronnen te controleren, te vergelijken met andere bronnen,
+                                        en hun eigen kritische denkvermogen te gebruiken.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Ethische Richtlijnen:</strong> Bespreek de ethische implicaties van het gebruik
+                                van AI, zoals bias, privacy, en academische integriteit. Verwijs naar relevante
+                                richtlijnen van de VU (indien beschikbaar) en bespreek hoe deze richtlijnen van
+                                toepassing zijn op het gebruik van AI in uw vakgebied.</li>
+                            <li><strong>Academische Integriteit:</strong> Maak duidelijk aan studenten dat het indienen
+                                van AI-gegenereerd werk als hun eigen werk *niet* is toegestaan. Bespreek hoe AI op een
+                                verantwoorde en ethische manier kan worden gebruikt als hulpmiddel bij het leren en
+                                onderzoeken, maar niet als vervanging voor eigen werk.
+                                <ul>
+                                    <li>Overweeg het gebruik van plagiaatdetectiesoftware die is bijgewerkt om
+                                        AI-gegenereerde tekst te herkennen.</li>
+                                    <li>Ontwerp opdrachten die moeilijker te "automatiseren" zijn door AI, zoals
+                                        opdrachten die persoonlijke reflectie, kritische analyse, of creatieve synthese
+                                        vereisen.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Kwaliteitscontrole van AI-Output:</strong> Controleer altijd de AI-gegenereerde
+                                output *voordat* u deze deelt met studenten. Zorg ervoor dat de informatie accuraat,
+                                relevant, en up-to-date is. Corrigeer eventuele fouten en vul ontbrekende informatie
+                                aan.</li>
+                            <li><strong>Toegankelijkheid:</strong> Houd rekening met de toegankelijkheid van AI-tools
+                                voor *alle* studenten. Zorg ervoor dat studenten met verschillende achtergronden en
+                                leermogelijkheden gelijke toegang hebben tot de benodigde technologie en ondersteuning.
+                            </li>
+                            <li><strong>Blijf Leren:</strong> De technologie van AI evolueert voortdurend. Blijf op de
+                                hoogte van de nieuwste ontwikkelingen, best practices, en ethische richtlijnen. Deel uw
+                                kennis en ervaringen met collega's.</li>
+                            <li><strong>Data Privacy:</strong> Wees bewust van de privacy-implicaties van het gebruik
+                                van AI-tools, vooral als u persoonlijke gegevens van studenten invoert. Gebruik bij
+                                voorkeur tools die voldoen aan de AVG-richtlijnen en het privacybeleid van de VU.</li>
+                        </ul>
+
+                        <div class="tip-box">
+                            <p><strong>Tip:</strong> Organiseer workshops of seminars binnen uw faculteit om ervaringen
+                                met AI in het onderwijs te delen en best practices te bespreken. Dit kan leiden tot een
+                                universiteitsbrede aanpak voor verantwoord AI-gebruik.</p>
+                        </div>
+                    </section>
+            </article>
         </main>
     </div>
 </body>
+
 </html>

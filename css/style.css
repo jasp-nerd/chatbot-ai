@@ -165,3 +165,63 @@ body.chat-open .chat-window {
     flex-direction: column;
     justify-content: space-between;
 }
+
+.chat-instructions {
+    background: linear-gradient(145deg, var(--white) 0%, var(--grey) 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.chat-instructions h3 {
+    color: var(--black);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.chat-instructions .intro-text {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.instruction-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.step-number {
+    background-color: var(--blue);
+    color: var(--white);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step p {
+    margin: 0;
+    color: var(--black);
+    font-size: 1rem;
+}
+
+.feature-description {
+    color: #666;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    text-align: center;
+}

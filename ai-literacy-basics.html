@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Literacy Basics - EduBot</title>
-    <link rel="stylesheet" href="article.css">
-    <link rel="stylesheet" href="chatbot.css">
+    <link rel="stylesheet" href="css/article.css">
+    <link rel="stylesheet" href="css/chatbot.css">
     <script type="importmap">
         {
           "imports": {
@@ -15,6 +16,7 @@
     </script>
     <script type="module" src="main.js"></script>
 </head>
+
 <body>
     <section class="chat-window">
         <button class="close">x close</button>
@@ -26,23 +28,22 @@
         <div class="input-area">
             <input placeholder="Ask me anything..." type="text">
             <button>
-                <img src="send-icon.png" alt="Send">
+                <img src="images/send-icon.png" alt="Send">
             </button>
         </div>
     </section>
 
     <div class="chat-button">
-        <img src="chat-icon.png" alt="Chat">
+        <img src="images/chat-icon.png" alt="Chat">
     </div>
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">
-                <img src="VU-logo-nobg.svg" alt="VU Logo" style="height: 40px;">
+                <img src="images/VU-logo-nobg.svg" alt="VU Logo" style="height: 40px;">
                 EduBot - Jouw AI Onderwijsassistent
             </a>
             <nav>
                 <a href="index.html">Home</a>
-                <a href="best-practices.html">Best Practices</a>
                 <a href="prompt-engineering.html">Prompt Engineering</a>
                 <a href="ai-literacy-basics.html">AI Literacy Basics</a>
             </nav>
@@ -52,63 +53,379 @@
         <aside class="sidebar">
             <nav class="sidebar-nav">
                 <div class="module-section">
-                    <div class="module-title">1. Fundamentele Concepten</div>
+                    <div class="module-title">1. Basisprincipes van Generatieve AI</div>
                     <div class="module-items">
-                        <a href="#what-is-ai">Wat is AI?</a>
-                        <a href="#types">Types AI Systemen</a>
-                        <a href="#capabilities">Mogelijkheden en Beperkingen</a>
+                        <a href="#generative-ai-what">1.1 Wat is Generatieve AI?</a>
+                        <a href="#generative-ai-overview">1.2 Generatieve AI: Een conceptueel overzicht</a>
+                        <a href="#generative-ai-capabilities">1.3 Generatieve AI: Mogelijkheden en beperkingen</a>
                     </div>
                 </div>
                 <div class="module-section">
-                    <div class="module-title">2. AI in de Praktijk</div>
+                    <div class="module-title">2. Ethiek en Maatschappelijke Impact van AI</div>
                     <div class="module-items">
-                        <a href="#daily-use">Dagelijks Gebruik</a>
-                        <a href="#education">Onderwijstoepassingen</a>
-                        <a href="#future">Toekomstperspectieven</a>
+                        <a href="#bias-and-fairness">2.1 Bias en eerlijkheid in AI</a>
+                        <a href="#academic-integrity">2.2 Academische integriteit en AI</a>
+                        <a href="#privacy-copyright">2.3 Privacy, auteursrecht en AI</a>
                     </div>
                 </div>
                 <div class="module-section">
-                    <div class="module-title">3. Kritisch Denken</div>
+                    <div class="module-title">3. AI in Academisch Onderzoek</div>
                     <div class="module-items">
-                        <a href="#evaluation">Informatie Evalueren</a>
-                        <a href="#bias">Vooroordelen Herkennen</a>
-                        <a href="#fact-checking">Fact-Checking</a>
-                    </div>
-                </div>
-                <div class="module-section">
-                    <div class="module-title">4. Verantwoord Gebruik</div>
-                    <div class="module-items">
-                        <a href="#ethics">Ethische Overwegingen</a>
-                        <a href="#safety">Veilig Gebruik</a>
-                        <a href="#digital-citizenship">Digitaal Burgerschap</a>
+                        <a href="#ai-research-tools">3.1 AI-onderzoekstools</a>
+                        <a href="#ai-reproducibility">3.2 AI: Reproduceerbaarheid en transparantie</a>
+                        <a href="#ai-future">3.3 De toekomst van AI in de academische wereld</a>
                     </div>
                 </div>
             </nav>
         </aside>
         <main>
             <h1>AI Literacy Basics</h1>
-            
-            <section id="what-is-ai" class="content-section">
-                <h2>Wat is AI?</h2>
-                <p>Artificial Intelligence (AI) verwijst naar systemen die menselijke intelligentie kunnen nabootsen en taken kunnen uitvoeren die traditioneel menselijke intelligentie vereisen.</p>
-                
+
+            <section id="generative-ai-what" class="content-section">
+                <h2>1.1 Wat is Generatieve AI?</h2>
+                <p>
+                    Generatieve AI verwijst naar een type kunstmatige intelligentie dat in staat is om *nieuwe* content
+                    te creëren, in tegenstelling tot traditionele AI-systemen die primair data analyseren of taken
+                    uitvoeren op basis van vooraf gedefinieerde regels. Deze nieuwe content kan variëren van tekst en
+                    afbeeldingen tot audio, video, code, en zelfs 3D-modellen. Het "generatieve" aspect duidt op het
+                    vermogen om iets origineels te produceren.
+                </p>
+                <p>
+                    Generatieve AI-modellen worden getraind op enorme hoeveelheden data. Ze leren de patronen, stijlen
+                    en structuren in deze data, en gebruiken deze kennis om nieuwe, vergelijkbare content te genereren.
+                    Denk bijvoorbeeld aan een model dat getraind is op miljoenen afbeeldingen van katten. Het kan
+                    vervolgens een *nieuwe* afbeelding van een kat genereren die niet in de trainingsdata voorkwam, maar
+                    wel de kenmerken van een kat vertoont.
+                </p>
+
                 <div class="tip-box">
                     <strong>Kernconcepten:</strong>
                     <ul>
-                        <li>Machine Learning</li>
-                        <li>Natural Language Processing</li>
-                        <li>Patroonherkenning</li>
+                        <li>Generatieve Modellen (LLMs, GANs, Diffusion Models)</li>
+                        <li>Trainingsdata</li>
+                        <li>Prompts</li>
+                        <li>Output (gegenereerde content)</li>
                     </ul>
                 </div>
 
                 <div class="example-box">
-                    <strong>Praktijkvoorbeeld:</strong>
-                    <p>Een chatbot die natuurlijke gesprekken kan voeren en vragen kan beantwoorden, zoals ChatGPT of Claude.</p>
+                    <strong>Praktijkvoorbeelden:</strong>
+                    <ul>
+                        <li><strong>ChatGPT, Gemini:</strong> Genereren tekstuele antwoorden, schrijven code, maken
+                            samenvattingen, en meer.</li>
+                        <li><strong>DALL-E, Midjourney, Stable Diffusion:</strong> Genereren afbeeldingen op basis van
+                            tekstuele beschrijvingen.</li>
+                        <li><strong>MusicLM:</strong> Genereert muziek op basis van tekstuele prompts.</li>
+                        <li><strong>GitHub Copilot:</strong> Genereert code-suggesties voor programmeurs.</li>
+                    </ul>
+                </div>
+                <div class="note-box">
+                    <div class="note-icon">!</div>
+                    <div class="note-content">
+                        <p>
+                            <strong>Belangrijk:</strong> Er is een wezenlijk verschil tussen "trainingsdata" (de data
+                            waarop het model is getraind) en "prompts" (de input die je geeft om output te genereren).
+                            De trainingsdata is de basiskennis, de prompt is de specifieke instructie.
+                        </p>
+                    </div>
                 </div>
             </section>
 
-            <!-- Additional sections would continue here -->
+            <section id="generative-ai-overview" class="content-section">
+                <h2>1.2 Generatieve AI: Een conceptueel overzicht</h2>
+                <p>
+                    Hoewel de onderliggende technologie van generatieve AI complex is (gebaseerd op neurale netwerken),
+                    kan het concept op een begrijpelijke manier worden uitgelegd. In essentie leren deze modellen
+                    patronen van de trainingsdata en gebruiken die om waarschijnlijkheden te berekenen.
+                </p>
+                <p>Stel je voor dat je een AI-model hebt dat getraind is op een enorme hoeveelheid tekst. Wanneer je het
+                    model een prompt geeft, zoals "De kat zit op de...", voorspelt het model het meest waarschijnlijke
+                    volgende woord op basis van de patronen die het heeft geleerd. Het zou kunnen voorspellen "mat",
+                    "tafel", of "vensterbank", afhankelijk van hoe vaak die combinaties in de trainingsdata voorkwamen.
+                    Het model "begrijpt" de betekenis van de woorden niet echt, maar het weet wel welke woorden
+                    statistisch gezien het meest waarschijnlijk samen voorkomen.
+                </p>
+                <div class="example-box">
+                    <strong>Analogie:</strong>
+                    <p>Beschouw generatieve AI als een zeer geavanceerde vorm van autocomplete. Je begint een zin (de
+                        prompt), en het model vult de rest aan op basis van de statistische waarschijnlijkheid die het
+                        heeft geleerd van de trainingsdata.</p>
+                </div>
+                <p>
+                    Dit probabilistische karakter is belangrijk om te begrijpen. De output van een generatief AI-model
+                    is *niet* deterministisch; dezelfde prompt kan meerdere keren verschillende (maar plausibele)
+                    outputs genereren. Dit komt omdat er een element van willekeurigheid in het proces zit, waardoor het
+                    model verschillende mogelijkheden kan verkennen.
+                </p>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> Denk aan "parameters" als de opgeslagen kennis van het model. Tijdens de
+                        training worden deze parameters aangepast om de patronen in de data zo goed mogelijk te
+                        weerspiegelen. Hoe meer parameters, hoe complexer de patronen die het model kan leren (en hoe
+                        groter de trainingsdataset moet zijn).</p>
+                </div>
+                <div class="note-box">
+                    <div class="note-icon">!</div>
+                    <div class="note-content">
+                        <p>
+                            <strong>Belangrijk:</strong> Neurale netwerken zijn de drijvende kracht achter moderne
+                            generatieve AI. Ze bestaan uit lagen van onderling verbonden "neuronen" die informatie
+                            verwerken en doorgeven. Het is niet nodig om de wiskunde hierachter te begrijpen, maar het
+                            is goed om te weten dat deze netwerken de basis vormen van de technologie.
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="generative-ai-capabilities" class="content-section">
+                <h2>1.3 Generatieve AI: Mogelijkheden en beperkingen</h2>
+                <p>
+                    Generatieve AI heeft indrukwekkende mogelijkheden, maar het is cruciaal om ook de beperkingen te
+                    kennen. Een realistisch begrip van beide is essentieel voor verantwoord en effectief gebruik.
+                </p>
+                <h3>Capabilities</h3>
+                <div class="example-box">
+                    <strong>Voorbeelden van Mogelijkheden:</strong>
+                    <ul>
+                        <li><strong>Tekstgeneratie:</strong> Verschillende soorten creatieve tekst formats genereren
+                            (gedichten, code, scripts, muziekstukken, e-mail, brieven, etc.).</li>
+                        <li><strong>Vraagbeantwoording:</strong> Informatieve antwoorden geven, zelfs op open,
+                            uitdagende of vreemde vragen.</li>
+                        <li><strong>Instructies volgen:</strong> Verzoeken uitvoeren en opdrachten afronden.</li>
+                        <li><strong>Samenvatten:</strong> Feitelijke onderwerpen samenvatten of verhalen creëren.</li>
+                        <li><strong>Afbeeldingsgeneratie:</strong> Afbeeldingen maken op basis van tekstuele prompts.
+                        </li>
+                        <li><strong>Code generatie:</strong> Code schrijven in verschillende programmeertalen.</li>
+                    </ul>
+                </div>
+
+                <h3>Limitations</h3>
+                <p>
+                    Generatieve AI-modellen zijn *niet* perfect. Ze hebben inherente beperkingen die voortkomen uit hun
+                    trainingsdata en de manier waarop ze werken.
+                </p>
+                <div class="example-box">
+                    <strong>Voorbeelden van Beperkingen:</strong>
+                    <ul>
+                        <li><strong>Hallucinaties:</strong> Het genereren van feitelijk onjuiste of onzinnige informatie
+                            die overtuigend kan klinken. Dit is een *groot* aandachtspunt. *Altijd* verifiëren!</li>
+                        <li><strong>Bias:</strong> Het weerspiegelen van vooroordelen die aanwezig zijn in de
+                            trainingsdata. Dit kan leiden tot discriminerende of oneerlijke outputs.</li>
+                        <li><strong>Gebrek aan Echt Begrip:</strong> Modellen "begrijpen" niet op de manier zoals mensen
+                            dat doen. Ze zijn extreem goede patroonherkenners, maar missen echt begrip en
+                            redeneervermogen.</li>
+                        <li><strong>Afhankelijkheid van Data Kwaliteit:</strong> "Garbage in, garbage out" - de
+                            kwaliteit van de output is direct afhankelijk van de kwaliteit van de trainingsdata.</li>
+                        <li><strong>Beperkt Abstract Redeneervermogen:</strong> Moeite met complexe logische
+                            redeneringen of common-sense kennis die niet expliciet in de trainingsdata staat.</li>
+                        <li><strong>Milieu-impact:</strong> Het trainen van grote AI-modellen vereist aanzienlijke
+                            computerkracht en energie, wat leidt tot een aanzienlijke ecologische voetafdruk.</li>
+                        <li><strong>Verouderde Informatie:</strong> Modellen hebben een "knowledge cutoff" - ze zijn
+                            niet op de hoogte van gebeurtenissen of informatie die na hun trainingsdatum heeft
+                            plaatsgevonden.</li>
+                    </ul>
+                </div>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> Beschouw generatieve AI als een krachtig hulpmiddel, maar *niet* als een
+                        onfeilbare bron van waarheid. Kritisch denken en verificatie zijn *altijd* noodzakelijk.</p>
+                </div>
+            </section>
+            <section id="bias-and-fairness" class="content-section">
+                <h2>2.1 Bias en eerlijkheid in AI</h2>
+                <p>
+                    Generatieve AI-modellen worden getraind op enorme hoeveelheden data, en deze data is vaak een weerspiegeling van de bestaande wereld – inclusief bestaande vooroordelen en ongelijkheden.  Als de trainingsdata bevooroordeeld is, zal de AI deze vooroordelen leren en reproduceren in zijn output.  Dit kan leiden tot discriminerende, oneerlijke of kwetsende resultaten.
+                </p>
+                <p>
+                    Bias kan zich op verschillende manieren manifesteren.  Bijvoorbeeld, een model getraind op tekstdata waarin mannen vaker geassocieerd worden met leiderschapsrollen, kan in zijn output mannen vaker als CEO's suggereren dan vrouwen.  Een model getraind op afbeeldingen waarin witte mensen oververtegenwoordigd zijn, kan moeite hebben met het correct herkennen of genereren van afbeeldingen van mensen met een andere huidskleur.
+                </p>
+                <div class="example-box">
+                    <strong>Voorbeelden van Bias:</strong>
+                    <ul>
+                        <li><strong>Gender Bias:</strong> AI-modellen die stereotypen over mannen en vrouwen reproduceren (bv. mannen als artsen, vrouwen als verpleegkundigen).</li>
+                        <li><strong>Racial Bias:</strong> AI-modellen die bepaalde etnische groepen discrimineren of negatief afbeelden.</li>
+                        <li><strong>Socio-economic Bias:</strong> AI-modellen die vooroordelen over sociale klasse of economische status versterken.</li>
+                        <li><strong>Language Bias:</strong> AI-modellen die beter presteren voor bepaalde talen of dialecten, vaak ten koste van minderheidsgroepen.</li>
+                        <li><strong>Cultural Bias:</strong> AI die westerse normen en waarden als de "standaard" beschouwt.</li>
+                    </ul>
+                </div>
+                <p>
+                    Het aanpakken van bias in AI is een complexe uitdaging.  Het vereist zorgvuldige aandacht voor de samenstelling van de trainingsdata, het ontwerp van de algoritmen, en het monitoren van de output.
+                </p>
+                 <div class="tip-box">
+                    <p><strong>Tip:</strong> Wees je bewust van *jouw eigen* mogelijke vooroordelen bij het beoordelen van AI-output.  Ben je geneigd om output als "correct" te beschouwen omdat het overeenkomt met jouw eigen overtuigingen, zelfs als het bevooroordeeld is?</p>
+                </div>
+                <div class="note-box">
+                    <div class="note-icon">!</div>
+                    <div class="note-content">
+                        <p>
+                            <strong>Belangrijk:</strong> Het is *onmogelijk* om bias volledig te elimineren.  Het doel is om bias te *mitigeren* en te streven naar *fairness* – ervoor te zorgen dat AI-systemen geen groepen systematisch benadelen of discrimineren.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="academic-integrity" class="content-section">
+                <h2>2.2 Academische integriteit en AI</h2>
+                <p>
+                    De opkomst van generatieve AI stelt het hoger onderwijs voor nieuwe uitdagingen op het gebied van academische integriteit.  Studenten kunnen AI-tools gebruiken om opdrachten te genereren, essays te schrijven, of code te produceren, en dit werk vervolgens indienen als hun eigen werk.  Dit is een vorm van plagiaat en een schending van de academische integriteit.
+                </p>
+                <p>
+                   Het detecteren van AI-gegenereerd plagiaat is echter *moeilijk*.  Traditionele plagiaatdetectiesoftware is vaak niet effectief in het identificeren van AI-gegenereerde tekst, omdat deze tekst uniek is en niet direct gekopieerd is van bestaande bronnen.
+                </p>
+                 <div class="example-box">
+                    <strong>Voorbeelden van Misbruik:</strong>
+                    <ul>
+                        <li>Een student gebruikt ChatGPT om een essay te schrijven en dient dit in als eigen werk.</li>
+                        <li>Een student gebruikt een AI-tool om code te genereren voor een programmeeropdracht en claimt dat hij/zij de code zelf heeft geschreven.</li>
+                        <li>Een student gebruikt een AI-tool om een presentatie te maken en doet alsof hij/zij de inhoud zelf heeft bedacht en samengesteld.</li>
+                    </ul>
+                </div>
+                <p>
+                    Om deze uitdagingen aan te pakken, moeten universiteiten hun beleid ten aanzien van academische integriteit herzien en aanpassen.  Dit kan onder meer inhouden:
+                </p>
+                <ul>
+                    <li>Het expliciet definiëren van AI-gegenereerd plagiaat in het academisch reglement.</li>
+                    <li>Het ontwikkelen van richtlijnen voor het *verantwoorde* gebruik van AI-tools in het onderwijs (bv. als hulpmiddel voor onderzoek, maar niet voor het genereren van complete opdrachten).</li>
+                    <li>Het aanpassen van beoordelingsmethoden om de nadruk te leggen op kritisch denken, analyse, en originele bijdragen, in plaats van op taken die gemakkelijk door AI kunnen worden uitgevoerd.</li>
+                    <li>Het trainen van docenten in het herkennen van mogelijke tekenen van AI-gebruik in studentenwerk (hoewel dit *niet* waterdicht is).</li>
+                    <li>Het investeren in geavanceerdere plagiaatdetectietechnologie die is ontworpen om AI-gegenereerde tekst te herkennen (indien beschikbaar en betrouwbaar).</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> Moedig studenten aan om AI *ethisch* en *transparant* te gebruiken.  Laat ze bijvoorbeeld aangeven *wanneer* en *hoe* ze AI-tools hebben gebruikt in hun werk (bv. in een voetnoot of bijlage).</p>
+                </div>
+            </section>
+            
+            <section id="privacy-copyright" class="content-section">
+                <h2>2.3 Privacy, auteursrecht en AI</h2>
+                <p>
+                    Het gebruik van generatieve AI roept belangrijke vragen op over privacy, copyright en intellectueel eigendom.
+                </p>
+                <h3>Privacy</h3>
+                <p>
+                    AI-modellen worden getraind op enorme hoeveelheden data, en deze data kan persoonlijke gegevens bevatten.  Het is van cruciaal belang dat deze gegevens worden verwerkt in overeenstemming met de geldende privacywetgeving, zoals de Algemene Verordening Gegevensbescherming (AVG) in Europa.  Bij het gebruik van AI-tools, vooral commerciële tools, is het belangrijk om te weten waar de data wordt opgeslagen, hoe deze wordt gebruikt, en of deze wordt gedeeld met derden.
+                </p>
+                <div class="note-box">
+                    <div class="note-icon">!</div>
+                    <div class="note-content">
+                        <p>
+                            <strong>Belangrijk (voor VU medewerkers):</strong> Raadpleeg altijd de Functionaris Gegevensbescherming (FG) van de VU bij twijfel over het gebruik van AI-tools in relatie tot privacy.  Gebruik bij voorkeur tools die voldoen aan de AVG-richtlijnen en het privacybeleid van de VU.
+                        </p>
+                    </div>
+                </div>
+                <h3>Copyright</h3>
+                <p>
+                    De trainingsdata van AI-modellen kan auteursrechtelijk beschermd materiaal bevatten (teksten, afbeeldingen, muziek, etc.).  Het gebruik van dit materiaal voor het trainen van AI-modellen is een juridisch grijs gebied.  Er is nog geen duidelijke jurisprudentie over de vraag of dit gebruik onder "fair use" valt of dat er toestemming nodig is van de rechthebbenden.
+                </p>
+                <p>
+                Daarnaast is er de vraag wie de eigenaar is van de *output* van een AI-model.  Is het de gebruiker die de prompt heeft ingevoerd?  De ontwikkelaar van het AI-model?  Of heeft niemand het auteursrecht, omdat de output is gegenereerd door een machine?  Ook hier is nog veel onduidelijkheid.
+                </p>
+                 <h3>Intellectueel Eigendom</h3>
+                 <p>
+                    Als je AI gebruikt om iets nieuws te creëren (bv. een tekst, een afbeelding, een muziekstuk), is het belangrijk om na te denken over de intellectuele eigendomsrechten.  Kun je dit werk beschermen?  En zo ja, hoe?  De huidige wetgeving is nog niet volledig aangepast aan de mogelijkheden van generatieve AI.
+                 </p>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> Als je AI-gegenereerde content gebruikt, vermeld dan *altijd* dat AI is gebruikt bij de creatie (bv. "Deze tekst is mede gegenereerd door [naam AI-tool]").  Dit is een kwestie van transparantie en academische integriteit.</p>
+                </div>
+            </section>
+            <section id="ai-research-tools" class="content-section">
+                <h2>3.1 AI-onderzoekstools</h2>
+                <p>
+                    Generatieve AI en andere AI-technologieën bieden een scala aan tools die specifiek zijn ontworpen om onderzoeksprocessen te ondersteunen en te versnellen. Deze tools kunnen worden ingezet in verschillende fasen van het onderzoek, van literatuuronderzoek tot data-analyse en publicatie.
+                </p>
+                <div class="example-box">
+                    <strong>Voorbeelden van AI-onderzoekstools:</strong>
+                    <ul>
+                        <li><strong>Literatuuronderzoek:</strong>
+                            <ul>
+                                <li><strong>Elicit:</strong> Helpt bij het vinden van relevante artikelen, het extraheren van kernbevindingen en het synthetiseren van informatie uit meerdere bronnen.</li>
+                                <li><strong>Scite:</strong> Analyseert citaties om te bepalen of een artikel ondersteuning biedt of juist tegenbewijs levert voor een bepaalde claim.</li>
+                                <li><strong>Semantic Scholar:</strong> AI-gestuurde zoekmachine voor wetenschappelijke literatuur, met functies voor samenvatting en het identificeren van invloedrijke artikelen.</li>
+                                <li><strong>ResearchRabbit:</strong> Visualiseert onderzoeksconnecties en helpt bij het ontdekken van relevante literatuur.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Data-analyse:</strong>
+                            <ul>
+                                <li><strong>AI-platforms voor statistische analyse:</strong> Tools die helpen bij het uitvoeren van complexe statistische analyses, het identificeren van patronen in data, en het visualiseren van resultaten (bv. RapidMiner, DataRobot).</li>
+                                <li><strong>Machine learning libraries (Python):</strong> Bibliotheken zoals scikit-learn, TensorFlow, en PyTorch bieden krachtige tools voor het bouwen en trainen van machine learning-modellen voor data-analyse.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Code Generatie en Debugging:</strong>
+                            <ul>
+                                <li><strong>GitHub Copilot:</strong> AI-assistent voor programmeurs, die code-suggesties genereert, helpt bij het debuggen, en code kan automatiseren.</li>
+                                 <li><strong>Tabnine:</strong> Bied code completion.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Assistentie bij het Schrijven van Subsidieaanvragen:</strong>
+                            <ul>
+                                <li><strong>AI-tools die helpen bij het structureren van voorstellen,</strong> het formuleren van onderzoeksdoelen, en het identificeren van relevante financieringsbronnen. (bv. Grantable)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Geautomatiseerde Experimenten:</strong>
+                            <ul>
+                                <li><strong>AI-systemen voor het ontwerpen en optimaliseren van experimenten,</strong> het versnellen van het proces van hypothesevorming en testen (vooral relevant in vakgebieden als materiaalkunde en farmacologie).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <p>
+                Het is belangrijk om de mogelijkheden *en* beperkingen van deze tools te kennen. Ze kunnen het onderzoeksproces aanzienlijk versnellen, maar kritische evaluatie van de resultaten blijft essentieel.
+                </p>
+                 <div class="tip-box">
+                    <p><strong>Tip:</strong> Begin met het verkennen van AI-tools die specifiek zijn ontworpen voor jouw vakgebied. Er zijn vaak gespecialiseerde tools beschikbaar die beter aansluiten bij de specifieke behoeften van jouw onderzoek.</p>
+                </div>
+            </section>
+            
+            <section id="ai-reproducibility" class="content-section">
+                <h2>3.2 AI: Reproduceerbaarheid en transparantie</h2>
+                <p>
+                    Reproduceerbaarheid is een fundamenteel principe van wetenschappelijk onderzoek. Het betekent dat andere onderzoekers de resultaten van een studie moeten kunnen repliceren door dezelfde methoden en data te gebruiken. Het gebruik van AI in onderzoek introduceert nieuwe uitdagingen voor reproduceerbaarheid, vooral bij "black box"-modellen, waarbij de interne werking ondoorzichtig is.
+                </p>
+                <p>
+                Om de reproduceerbaarheid te waarborgen bij het gebruik van AI, zijn de volgende stappen belangrijk:
+                </p>
+                <ul>
+                    <li><strong>Gedetailleerde Documentatie:</strong> Beschrijf nauwkeurig welk AI-model is gebruikt, inclusief de versie, parameters, en configuratie-instellingen.</li>
+                    <li><strong>Beschikbaarheid van Trainingsdata:</strong> Maak, indien mogelijk, de trainingsdata openbaar beschikbaar, of beschrijf deze data zo gedetailleerd mogelijk. Houd rekening met privacy- en ethische overwegingen bij het delen van data.</li>
+                    <li><strong>Code Openbaar Maken:</strong> Publiceer de code die is gebruikt voor het trainen en toepassen van het AI-model, bij voorkeur via platforms als GitHub.</li>
+                    <li><strong>Gebruik van Open-Source Modellen:</strong> Overweeg het gebruik van open-source AI-modellen, omdat deze inherent transparanter zijn dan propriëtaire modellen.</li>
+                    <li><strong>Explainable AI (XAI):</strong> Maak, waar mogelijk, gebruik van methoden om de beslissingen van AI-modellen te verklaren. Dit kan helpen om inzicht te krijgen in de factoren die de output van het model beïnvloeden. Voorbeelden zijn SHAP (SHapley Additive exPlanations) en LIME (Local Interpretable Model-agnostic Explanations).</li>
+                </ul>
+              <div class="note-box">
+                    <div class="note-icon">!</div>
+                    <div class="note-content">
+                        <p>
+                            <strong>Belangrijk:</strong> Reproduceerbaarheid is niet alleen een wetenschappelijke plicht, maar het vergroot ook het vertrouwen in de resultaten van AI-onderzoek.
+                        </p>
+                    </div>
+                </div>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> Gebruik gestandaardiseerde rapportageformaten voor AI-modellen, zoals Model Cards (Google) of FactSheets (IBM), om de transparantie te vergroten.</p>
+                </div>
+            </section>
+            
+            <section id="ai-future" class="content-section">
+                <h2>3.3 De toekomst van AI in de academische wereld</h2>
+                <p>
+                    De impact van AI op de academische wereld zal in de komende jaren alleen maar toenemen. Het is te verwachten dat AI een steeds grotere rol zal spelen in alle aspecten van het onderzoek, van het genereren van hypothesen tot het schrijven van publicaties.
+                </p>
+                <p>
+                    Enkele mogelijke toekomstige ontwikkelingen:
+                </p>
+                <ul>
+                    <li><strong>Gepersonaliseerd Leren:</strong> AI kan worden gebruikt om leerervaringen op maat te maken voor individuele studenten, rekening houdend met hun leerstijl, voorkennis, en voortgang.</li>
+                    <li><strong>Veranderende Rol van Docenten:</strong> De rol van docenten zal verschuiven van het overdragen van kennis naar het faciliteren van leerprocessen, het begeleiden van studenten, en het bevorderen van kritisch denken.</li>
+                    <li><strong>Versnelling van Wetenschappelijke Ontdekking:</strong> AI kan helpen bij het identificeren van patronen in grote datasets, het simuleren van complexe systemen, en het genereren van nieuwe onderzoeksvragen, wat kan leiden tot snellere doorbraken in verschillende vakgebieden.</li>
+                    <li><strong>AI-gedreven Simulaties:</strong> Meer gebruik van virtuele laboratoria en simulaties, waardoor studenten en onderzoekers experimenten kunnen uitvoeren die in de echte wereld niet mogelijk of te duur zouden zijn.</li>
+                    <li><strong>Virtuele Onderzoeksassistenten:</strong> AI-systemen die onderzoekers ondersteunen bij routinetaken, zoals literatuuronderzoek, data-analyse, en het schrijven van rapporten.</li>
+                </ul>
+                <p>Tegelijkertijd is het belangrijk om de ethische en maatschappelijke implicaties van deze ontwikkelingen in de gaten te houden. Vragen over de toegankelijkheid van AI-technologie, de impact op de werkgelegenheid in de academische wereld, en de mogelijke versterking van bestaande ongelijkheden moeten zorgvuldig worden overwogen.</p>
+            
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> Blijf op de hoogte van de nieuwste ontwikkelingen op het gebied van AI en onderzoek. De technologie evolueert snel, en het is belangrijk om je kennis en vaardigheden voortdurend bij te werken.</p>
+                </div>
+            </section>
         </main>
     </div>
 </body>
+
 </html>
