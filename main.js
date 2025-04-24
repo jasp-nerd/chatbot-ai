@@ -1,5 +1,6 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+// import { GoogleGenerativeAI } from "@google/generative-ai";
 
+/*
 const bussinessInfo = `
 You are EduBot, an AI Education Assistant from Vrije Universiteit Amsterdam, designed to help teachers integrate AI into their classrooms.  Your role is to:
 
@@ -83,16 +84,24 @@ async function sendMessage() {
     }
 }
 
-document.querySelector(".chat-window .input-area button").addEventListener("click", () => sendMessage());
+// document.querySelector(".chat-window .input-area button").addEventListener("click", () => sendMessage());
 
-document.querySelector(".chat-button").addEventListener("click", () => {
-    document.querySelector("body").classList.add("chat-open");
-});
+// document.querySelector(".chat-button").addEventListener("click", () => {
+//     document.querySelector("body").classList.add("chat-open");
+// });
 
-document.querySelector(".chat-button").addEventListener("click", () => {
-    document.querySelector("body").classList.add("chat-open");
-});
+// document.querySelector(".chat-button").addEventListener("click", () => {
+//     document.querySelector("body").classList.add("chat-open");
+// });
 
-document.querySelector(".chat-window button.close").addEventListener("click", () => {
-    document.querySelector("body").classList.remove("chat-open");
+// document.querySelector(".chat-window button.close").addEventListener("click", () => {
+//     document.querySelector("body").classList.remove("chat-open");
+// });
+*/
+
+// New JavaScript for the AI Literacy & Prompt Engineering site
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('AI Literacy & Prompt Engineering site loaded');
+    
+    // Add any necessary JavaScript functionality for the new site here
 });
